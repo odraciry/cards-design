@@ -1,3 +1,13 @@
+@keyframes surgir {
+    from{
+        opacity: 1;
+        transform: translateX(0);
+    } to{
+        opacity: .8;
+        transform: translateX(-30px);
+    }
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -7,19 +17,59 @@
 body{
     background-color: #c6ac8f;
 }
+
 h1{
     color: #c6ac8f;
     text-shadow: 1px 1px 10px #5e503f;
     text-transform: uppercase;
     margin-top: 3rem;
     text-align: center;
+    transition: 2s all;
+}
+h1:hover{
+    transition: 2s all;
+    color: #554b3e;
+    text-shadow: 1px 1px 1px #5e503f;
+
+}
+h1::before{
+    content: "";
+    display: flex;
+    justify-self: center;
+    width: 50%;
+    height: 2px;
+    background-color: #5e503f;
+    margin-bottom: 1rem;
+    animation: surgir 1s reverse ease-in-out;
+    transform: translateX(0);
+    transition: 1s all;
+}
+h1:hover::before{
+    transition: 1s all;
+    transform: translateX(-30px);
+    background-color: #5e503f34;
+
 }
 h1::after{
     content: "";
-    width: 100px;
-    height: 2rem;
-    background-color: #0b090a;
+    display: flex;
+    justify-self: center;
+    width: 50%;
+    height: 2px;
+    background-color: #5e503f;
+    margin-top: 1rem;
+    animation: surgir 1s normal ease-in-out;
+    transform: translateX(-30px);
+    transition: 1s all;
+
 }
+h1:hover::after{
+    transform: translateX(0);
+    transition: 1s all;
+    background-color: #5e503f34;
+
+}
+
 .cardContainer{
     align-items: center;
     justify-content: center;
