@@ -23,7 +23,7 @@
                     abre espaço para a paz interior.</p>
                 <div class="iconsDiv">
                     <img src="img/infinidade.png" class="iconInfinite" alt="">
-                    <img src="img/energia.png" class="iconLampada" alt="">
+                    <img src="img/energia.png" class="iconLampada" id="iconLampada" alt="">
                 </div>
 
 
@@ -38,7 +38,7 @@
                     e nos ensina a viver o presente.</p>
                 <div class="iconsDiv">
                     <img src="img/infinidade.png" class="iconInfinite" alt="">
-                    <img src="img/energia.png" class="iconLampada" alt="">
+                    <img src="img/energia.png" class="iconLampada" id="iconLampada" alt="">
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     criar a vida que desejamos.</p>
                 <div class="iconsDiv">
                     <img src="img/infinidade.png" class="iconInfinite" alt="">
-                    <img src="img/energia.png" class="iconLampada" alt="">
+                    <img src="img/energia.png" class="iconLampada" id="iconLampada" alt="">
                 </div>
             </div>
         </div>
@@ -64,11 +64,19 @@
                     convivência mais humana.</p>
                 <div class="iconsDiv">
                     <img src="img/infinidade.png" class="iconInfinite" alt="">
-                        <img src="img/energia.png" class="iconLampada" alt="">
+                    <img src="img/energia.png" class="iconLampada" id="iconLampada" alt="">
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // const icons = document.getElementsByClassName('iconLampada');
+        Array.from(document.getElementsByClassName('iconLampada')).forEach(icon =>{
+            icon.addEventListener("mouseleave", () => icon.classList.add("filterReverse"));
+            icon.addEventListener("mouseenter", () => icon.classList.remove("filterReverse"));
+        })
+    </script>
 </body>
 
 </html>

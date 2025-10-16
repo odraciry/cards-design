@@ -32,8 +32,8 @@ h1 {
 
 h1:hover {
     transition: 2s all;
-    color: #554b3e;
-    text-shadow: 1px 1px 1px #5e503f;
+    color: #181613;
+    text-shadow: 1px 1px 1px #1a1815;
 
 }
 
@@ -87,7 +87,7 @@ h1:hover::after {
 }
 
 .cards {
-    height: 500px;
+    height: 549px;
     width: 30%;
     background-color: #eae0d5;
     box-shadow: 1px 1px 8px #5e503f;
@@ -109,16 +109,17 @@ h1:hover::after {
 .imgContainer,
 .cardTitle {
     width: 100%;
+    /* height: 10%; */
 }
 
 .imgContainer {
     border-radius: 6px 6px 0 0;
     width: 100%;
-    height: 40%;
+    height: 60%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
 }
 
 .imgContainer1 {
@@ -149,12 +150,14 @@ h1:hover::after {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     letter-spacing: -0.5px;
+    height: 5%;
 }
 
 .cardText {
     padding: 0 2rem;
     color: #161a1d;
     line-height: 1.3rem;
+    height: 37%;
 }
 
 .iconsDiv{
@@ -164,19 +167,19 @@ h1:hover::after {
     flex-direction: row;
     justify-content: space-between;
     align-self: end;
-    margin-top: 20%;
+    margin-top: 10%;
     padding: 0 .5rem;
 }
 .iconsDiv img{
     width: 30px;
     height: 30px;
 }
-.iconsDiv img:first-child{
+.iconsDiv img:first-child {
    
     transition: all 1s;
 
 }
-.iconsDiv img:first-child:hover{
+.iconsDiv img:first-child:hover {
     transform: rotate(360deg);
     transition: all 1s;
 }
@@ -185,12 +188,59 @@ h1:hover::after {
     box-sizing: border-box;
     border-radius: 6px;
 }
-.iconsDiv img:last-child:hover{
-    width: 35px;
-    height: 35px;
+.iconsDiv img:last-child:hover {
+    /* width: 35px;
+    height: 35px; */
     transition: all .1s;
-    background-color: #ff8c0091;
+    /* background-color: #ff8c0091; */
+    /* filter: invert(2) drop-shadow(2px 2px 25px rgba(0, 0, 0, 0.996)); */
+    animation: filter 1s ease-in-out forwards;
     box-sizing: border-box;
     padding: 4px;
     cursor: pointer;
+}
+.filterReverse {
+    animation: filterReverse 1s ease-in-out;
+}
+@keyframes filter {
+    from {
+        filter: none;
+    }
+    to {
+        filter: invert(2) drop-shadow(2px 2px 25px rgba(0, 0, 0, 0.996));
+        transform: scale(1.6);
+
+    }
+}
+@keyframes filterReverse {
+    from {
+        filter: invert(2) drop-shadow(2px 2px 25px rgba(0, 0, 0, 0.996));
+        transform: scale(1.6);
+    }
+    to {
+        filter: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1::after, h1::before{
+        width: 80%;
+    }
+    .cardContainer{
+        flex-direction: column;
+        padding: 2rem;
+        height: auto;
+    }
+    .cards{
+        width: 100%;
+        height: 70vh;
+        text-align: center;
+    }
+    .cards h2{
+        font-weight: 700;
+        margin-top: 2rem;
+    }
+    .imgContainer{
+        background-attachment: fixed;
+    }
 }
